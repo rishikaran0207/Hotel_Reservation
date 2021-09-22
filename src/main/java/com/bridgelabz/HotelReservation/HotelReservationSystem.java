@@ -34,18 +34,40 @@ public class HotelReservationSystem {
         BridgeWood_Rate = (BridgeWood_Rate*count);
         RidgeWood_Rate = (RidgeWood_Rate*count);
         if (LakeWood_Rate<BridgeWood_Rate && LakeWood_Rate<RidgeWood_Rate){
-            System.out.println("LakeWood");
+            System.out.println("Cheapest hotel: LakeWood");
             System.out.println(LakeWood_Rate);
         }
         if (BridgeWood_Rate<LakeWood_Rate && BridgeWood_Rate<RidgeWood_Rate){
-            System.out.println("BridgeWood");
+            System.out.println("Cheapest hotel: BridgeWood");
             System.out.println(BridgeWood_Rate);
         }
         if (RidgeWood_Rate<BridgeWood_Rate && RidgeWood_Rate<LakeWood_Rate){
-            System.out.println("RidgeWood");
+            System.out.println("Cheapest hotel: RidgeWood");
             System.out.println(RidgeWood_Rate);
         }
     }
+
+    public void weekday_weekend_rate(){
+        if (hotel == "LakeWood") {
+            int weekday_rate = 110;
+            int weekend_rate = 90;
+            System.out.println("Weekday Rate of Regular Customers of LakeWood Hotel:" + weekday_rate);
+            System.out.println("Weekend Rate of Regular Customers of LakeWood Hotel:" + weekend_rate);
+        }
+        if (hotel == "BridgeWood") {
+            int weekday_rate = 150;
+            int weekend_rate = 50;
+            System.out.println("Weekday Rate of Regular Customers of BridgeWood Hotel:" + weekday_rate);
+            System.out.println("Weekend Rate of Regular Customers of BridgeWood Hotel:" + weekend_rate);
+        }
+        if (hotel == "RidgeWood") {
+            int weekday_rate = 220;
+            int weekend_rate = 150;
+            System.out.println("Weekday Rate of Regular Customers of RidgeWood Hotel:" + weekday_rate);
+            System.out.println("Weekend Rate of Regular Customers of RidgeWood Hotel:" + weekend_rate);
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         HotelReservationSystem hotel1 = new HotelReservationSystem("LakeWood","Regular");
         HotelReservationSystem hotel2 = new HotelReservationSystem("BridgeWood","Regular");
@@ -61,5 +83,8 @@ public class HotelReservationSystem {
         System.out.println(sDate2+"\t"+date2);
         HotelReservationSystem hotel = new HotelReservationSystem();
         hotel.cheapestHotel();
+        hotel1.weekday_weekend_rate();;
+        hotel2.weekday_weekend_rate();
+        hotel3.weekday_weekend_rate();
     }
 }
