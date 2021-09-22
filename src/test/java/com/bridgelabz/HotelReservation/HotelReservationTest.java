@@ -27,4 +27,10 @@ public class HotelReservationTest {
         obj_hotel2.cheapest_weekday_weekend_hotel();
         obj_hotel3.cheapest_weekday_weekend_hotel();
     }
+    @Test
+    public void toCheck_hotelRating() {
+        obj_hotel1.hotel_rating();
+        obj_hotel2.hotel_rating();
+        obj_hotel3.hotel_rating();
+    }
 }

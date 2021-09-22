@@ -97,6 +97,17 @@ public class HotelReservationSystem {
             System.out.println("RidgeWood with total rates $370.");
         }
     }
+    public void hotel_rating(){
+        if (hotel == "LakeWood"){
+            System.out.println("LakeWood rating is 3.");
+        }
+        if (hotel == "BridgeWood"){
+            System.out.println("BridgeWood rating is 4.");
+        }
+        if (hotel == "RidgeWood"){
+            System.out.println("RidgeWood rating is 5.");
+        }
+    }
 
     public static void main(String[] args) throws Exception {
         HotelReservationSystem hotel1 = new HotelReservationSystem("LakeWood","Regular");
@@ -119,5 +130,8 @@ public class HotelReservationSystem {
         hotel1.cheapest_weekday_weekend_hotel();
         hotel2.cheapest_weekday_weekend_hotel();
         hotel3.cheapest_weekday_weekend_hotel();
+        hotel1.hotel_rating();
+        hotel2.hotel_rating();
+        hotel3.hotel_rating();
     }
 }
