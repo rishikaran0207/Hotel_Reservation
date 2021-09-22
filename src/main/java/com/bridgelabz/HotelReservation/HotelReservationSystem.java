@@ -67,6 +67,36 @@ public class HotelReservationSystem {
             System.out.println("Weekend Rate of Regular Customers of RidgeWood Hotel:" + weekend_rate);
         }
     }
+    public void cheapest_weekday_weekend_hotel(){
+        int sum_LakeWood = 0,sum_BridgeWood = 0, sum_RidgeWood = 0;
+        if (hotel == "LakeWood") {
+            int weekday_rate = 110;
+            int weekend_rate = 90;
+            sum_LakeWood = (sum_LakeWood+weekday_rate+weekend_rate);
+            System.out.println("Total Weekday and Weekend rate of LakeWood Hotel:" + sum_LakeWood);
+        }
+        if (hotel == "BridgeWood") {
+            int weekday_rate = 150;
+            int weekend_rate = 50;
+            sum_BridgeWood = (sum_BridgeWood+weekday_rate+weekend_rate);
+            System.out.println("Total Weekday and Weekend rate of BridgeWood Hotel:" + sum_BridgeWood);
+        }
+        if (hotel == "RidgeWood") {
+            int weekday_rate = 220;
+            int weekend_rate = 150;
+            sum_RidgeWood = (sum_RidgeWood+weekday_rate+weekend_rate);
+            System.out.println("Total Weekday and Weekend rate of RidgeWood Hotel:" + sum_RidgeWood);
+        }
+        if (sum_LakeWood<=sum_BridgeWood && sum_LakeWood<sum_RidgeWood){
+            System.out.println("LakeWood and BridgeWood with total rates $200.");
+        }
+        if (sum_BridgeWood<=sum_LakeWood && sum_BridgeWood<sum_RidgeWood){
+            System.out.println("LakeWood and BridgeWood with total rates $200.");
+        }
+        if (sum_RidgeWood<sum_LakeWood && sum_RidgeWood<sum_BridgeWood){
+            System.out.println("RidgeWood with total rates $370.");
+        }
+    }
 
     public static void main(String[] args) throws Exception {
         HotelReservationSystem hotel1 = new HotelReservationSystem("LakeWood","Regular");
@@ -86,5 +116,8 @@ public class HotelReservationSystem {
         hotel1.weekday_weekend_rate();;
         hotel2.weekday_weekend_rate();
         hotel3.weekday_weekend_rate();
+        hotel1.cheapest_weekday_weekend_hotel();
+        hotel2.cheapest_weekday_weekend_hotel();
+        hotel3.cheapest_weekday_weekend_hotel();
     }
 }
